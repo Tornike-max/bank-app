@@ -96,7 +96,11 @@ export default function PayLoan({
       </div>
       <div className="w-full flex justify-between items-center">
         <span className="text-xs font-semibold text-red-500">
-          left to pay: {formatCurrency(loanData?.leftToPay, "USD")}
+          left to pay:{" "}
+          {formatCurrency(
+            loanData?.leftToPay === undefined ? 0 : loanData?.leftToPay,
+            "USD"
+          )}
         </span>
         <div className="w-full flex justify-end items-center gap-2">
           <Button variant="ghost" color="primary">

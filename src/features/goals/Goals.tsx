@@ -18,7 +18,7 @@ export default function Goals() {
     .slice(0, 3);
 
   return (
-    <div className="max-w-[2200px] w-full flex justify-center items-center py-8">
+    <div className="max-w-[2200px] w-full flex justify-center items-center ">
       <div className="w-full flex flex-col justify-center items-center gap-4">
         <CreateGoal />
 

@@ -29,12 +29,12 @@ export default function CreateGoal() {
   }
 
   return (
-    <div className=" flex justify-center items-center bg-gray-100 border-1 border-primary-500 rounded-md">
-      <div className="max-w-xl w-full bg-white p-8 rounded-lg shadow-lg">
+    <div className="w-full flex justify-center items-center bg-gray-100 border-1 border-primary-500 rounded-md">
+      <div className=" w-full bg-white p-4 sm:p-8 rounded-lg shadow-lg">
         <h1 className="text-xl sm:text-2xl font-semibold text-primary-500 mb-4 text-center">
           Create Your Goal
         </h1>
-        <form onSubmit={(e) => handleAddGoal(e)}>
+        <form className="w-full" onSubmit={(e) => handleAddGoal(e)}>
           <Textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
@@ -43,13 +43,14 @@ export default function CreateGoal() {
             label="Description"
             className="mb-4"
           />
-          <div className="flex items-center w-full gap-1">
+          <div className="flex items-center flex-col sm:flex-row w-full gap-1">
             <Input
               value={goalName}
               size="sm"
               color="primary"
               variant="bordered"
               label="Goal Name"
+              className="w-full"
               onChange={(e) => setGoalName(e.target.value)}
             />
             <Input
@@ -59,6 +60,7 @@ export default function CreateGoal() {
               variant="bordered"
               label="Amount"
               value={amount}
+              className="w-full"
               onChange={(e) => setAmount(e.target.value)}
             />
             <Input
@@ -67,6 +69,7 @@ export default function CreateGoal() {
               color="primary"
               variant="bordered"
               value={deadline}
+              className="w-full"
               onChange={(e) => setDeadline(e.target.value)}
             />
           </div>
@@ -90,10 +93,12 @@ export default function CreateGoal() {
             className="mb-4"
           />
           <div className="flex justify-between items-center mb-4">
-            <span className="text-sm text-gray-600">
+            <span className="text-xs sm:text-sm text-gray-600">
               Remaining Amount: {Number(amount) - sliderAmount}
             </span>
-            <span className="text-sm text-gray-600">Your Goal: {amount}</span>
+            <span className="text-xs sm:text-sm text-gray-600">
+              Your Goal: {amount}
+            </span>
           </div>
           <div className="flex justify-end items-center gap-2">
             <Button

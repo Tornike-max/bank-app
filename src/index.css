@@ -39,3 +39,9 @@
 .tooltip-container {
     margin-top: 10px;
 }
+
+@media (max-width: 500px) {
+    .recharts-legend-wrapper {
+        display: none !important;
+    }
+}

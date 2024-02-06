@@ -40,7 +40,7 @@ export default function Totals({
     <>
       <div className="rounded-md border-1 border-stone-200 shadow-lg hover:shadow-2xl duration-150 transition-all py-3 px-5 max-w-md w-full flex justify-start items-center flex-col gap-2 font-semibold">
         <div className="w-full flex items-center justify-between">
-          <HiOutlineBriefcase className="text-primary-500 text-xl" />
+          <HiOutlineBriefcase className="text-primary-500 text-lg xl:text-xl" />
           <div className="flex items-center">
             <button
               onClick={() => setBlurBalance((blurBalance) => !blurBalance)}
@@ -54,11 +54,11 @@ export default function Totals({
           </div>
         </div>
         <div className="w-full flex justify-start items-center">
-          <p className="text-xs lg:text-sm font-semibold text-primary-500">
+          <p className="text-xs lg:text-xs xl:text-sm font-semibold text-primary-500">
             Total Balance
           </p>
         </div>
-        <div className="flex justify-start gap-2 items-center w-full text-xs lg:text-sm">
+        <div className="flex justify-start gap-2 items-center w-full text-xs lg:text-xs xl:text-sm">
           <span className={`text-primary-500 ${blurBalance && "blur-sm"}`}>
             {selectCurrency === "USD"
               ? formatCurrency(totalBalance || 0, selectCurrency)
@@ -85,7 +85,7 @@ export default function Totals({
           </button>
         </div>
         <div className="w-full flex justify-start items-center">
-          <p className="text-xs lg:text-sm font-semibold text-yellow-500">
+          <p className="text-xs lg:text-xs xl:text-sm font-semibold text-yellow-500">
             Income
           </p>
         </div>
@@ -93,7 +93,7 @@ export default function Totals({
           <span
             className={`text-yellow-500 ${
               blurIncome && "blur-sm"
-            } text-xs lg:text-sm`}
+            } text-xs lg:text-xs xl:text-sm`}
           >
             {formatCurrency(income || 0, selectCurrency)}
           </span>
@@ -112,7 +112,7 @@ export default function Totals({
           </button>
         </div>
         <div className="w-full flex justify-start items-center">
-          <p className="text-xs lg:text-sm font-semibold text-indigo-500">
+          <p className="text-xs lg:text-xs xl:text-sm font-semibold text-indigo-500">
             Withdrawals
           </p>
         </div>
@@ -120,7 +120,7 @@ export default function Totals({
           <span
             className={`text-indigo-600 ${
               blurOutcome && "blur-sm"
-            } text-xs lg:text-sm`}
+            } text-xs lg:text-xs xl:text-sm`}
           >
             {formatCurrency(withdrawals || 0, selectCurrency)}
           </span>
@@ -139,7 +139,7 @@ export default function Totals({
           </button>
         </div>
         <div className="w-full flex justify-start items-center">
-          <p className="text-xs lg:text-sm font-semibold text-green-500">
+          <p className="text-xs lg:text-xs xl:text-sm font-semibold text-green-500">
             Loans
           </p>
         </div>
@@ -147,7 +147,7 @@ export default function Totals({
           <span
             className={`text-green-600 ${
               blurLoan && "blur-sm"
-            } text-xs lg:text-sm`}
+            } text-xs lg:text-xs xl:text-sm`}
           >
             {formatCurrency(loan || 0, selectCurrency)}
           </span>

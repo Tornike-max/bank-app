@@ -52,22 +52,22 @@ export default function TransferAmountForm() {
           Go Back
         </Button>
       </div>
-      <div className="w-full flex justify-start items-center gap-2 text-xl font-semibold text-primary-500">
+      <div className="w-full flex justify-start items-center gap-2 text-sm sm:text-base md:text-lg font-semibold text-primary-500">
         <HiOutlineCurrencyDollar />
         <h1>Enter The Transfer Amount</h1>
       </div>
       <div className="w-full flex justify-start items-center gap-2 font-semibold">
-        <HiOutlineArrowLeft className="text-2xl text-primary-500 font-semibold" />
-        <p>From</p>
-        <IoRemoveOutline className="text-2xl" />
-        <p>To</p>
-        <HiOutlineArrowRight className="text-2xl text-primary-500 font-semibold" />
+        <HiOutlineArrowLeft className="text-lg sm:text-xl  text-primary-500 font-semibold" />
+        <p className="text-lg sm:text-xl ">From</p>
+        <IoRemoveOutline className="text-lg sm:text-xl " />
+        <p className="text-lg sm:text-xl ">To</p>
+        <HiOutlineArrowRight className="text-lg sm:text-xl  text-primary-500 font-semibold" />
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="w-full flex justify-center items-center gap-4 flex-col"
       >
-        <div className="w-full flex items-center gap-4">
+        <div className="w-full flex items-center flex-col sm:flex-row gap-4">
           <Input
             variant="bordered"
             color="primary"
@@ -90,7 +90,7 @@ export default function TransferAmountForm() {
               required: "This Field Is Required",
             })}
             classNames={{
-              base: "max-w-xs",
+              base: "w-full",
               trigger: "min-h-unit-12 py-2",
             }}
           >
@@ -112,7 +112,7 @@ export default function TransferAmountForm() {
           </Select>
         </div>
 
-        <div className="w-full flex items-center gap-4">
+        <div className="w-full flex items-center flex-col sm:flex-row  gap-4">
           <Input
             variant="bordered"
             color="primary"

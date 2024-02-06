@@ -28,30 +28,34 @@ export default function ProfileHeader({
     <div className="w-full flex justify-between items-center bg-stone-100 py-6 rounded-lg">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className=" w-full flex justify-center items-center gap-2 px-4"
+        className=" w-full flex justify-center items-center flex-col gap-4 px-4"
       >
-        <img
-          src={user?.imageUrl}
-          alt="user img"
-          className="rounded-full border-3 w-12 h-12"
-        />
-        <div className="w-full flex justify-center items-start flex-col">
-          <span>User</span>
-          <span>{user?.name}</span>
+        <div className="flex items-center justify-between gap-2">
+          <img
+            src={user?.imageUrl}
+            alt="user img"
+            className="rounded-full border-3 w-10 h-10 sm:w-12 sm:h-12"
+          />
+          <div className="w-full flex justify-center items-start flex-col text-sm lg:text-base">
+            <span>User</span>
+            <span>{user?.name}</span>
+          </div>
         </div>
-        <Input
-          type="file"
-          placeholder="Change Image"
-          variant="bordered"
-          color="primary"
-          size="sm"
-          {...register("image", {
-            required: true,
-          })}
-        />
-        <Button type="submit" size="md" variant="ghost" color="primary">
-          {isUploading ? <Spinner /> : "Change"}
-        </Button>
+        <div className="flex items-center justify-between gap-2">
+          <Input
+            type="file"
+            placeholder="Change Image"
+            variant="bordered"
+            color="primary"
+            size="sm"
+            {...register("image", {
+              required: true,
+            })}
+          />
+          <Button type="submit" size="md" variant="ghost" color="primary">
+            {isUploading ? <Spinner /> : "Change"}
+          </Button>
+        </div>
       </form>
     </div>
   );

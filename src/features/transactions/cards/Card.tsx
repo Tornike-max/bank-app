@@ -25,16 +25,16 @@ export default function Card({
   console.log(cardData ? cardData : []);
   return (
     <div className="w-full flex justify-center items-center flex-col gap-4">
-      <div className="w-full flex justify-center items-center bg-stone-100 shadow-md rounded-md py-4 px-6 hover:bg-slate-100">
-        <div className="w-96 h-56 m-auto bg-red-100 rounded-xl relative text-white shadow-xl  hover:shadow-2xl duration-150 transition-all">
+      <div className="w-full flex justify-center items-center bg-stone-100 shadow-md rounded-md px-6 hover:bg-slate-100">
+        <div className="max-w-96 w-full h-56 m-auto bg-red-100 rounded-xl relative text-white shadow-xl  hover:shadow-2xl duration-150 transition-all">
           <img
             className="relative object-cover w-full h-full rounded-xl"
             src="https://i.imgur.com/kGkSg1v.png"
           />
 
-          <div className="w-full px-8 absolute top-8">
+          <div className="w-full px-4 sm:px-8 absolute top-8">
             <div className="flex justify-between">
-              <div className="">
+              <div className="text-xs sm:text-sm">
                 <h1 className="font-light">
                   {(cardData && cardData[0].cardName) || cardName}
                 </h1>
@@ -43,13 +43,13 @@ export default function Card({
                 </p>
               </div>
               <img
-                className="w-14 h-14"
+                className="w-10 h-10 sm:w-14 sm:h-14"
                 src="https://i.imgur.com/bbPHJVe.png"
               />
             </div>
-            <div className="pt-1">
+            <div className="pt-1 text-sm sm:text-base">
               <h1 className="font-light">Card Number</h1>
-              <p className="font-medium tracking-more-wider">
+              <p className="font-medium  tracking-more-wider">
                 {(cardData &&
                   cardData[0].card_number.slice(0, 4) +
                     " " +
@@ -65,14 +65,14 @@ export default function Card({
               <div className="flex justify-between">
                 <div className="">
                   <h1 className="font-light text-xs">Valid</h1>
-                  <p className="font-medium tracking-wider text-sm">
+                  <p className="font-medium tracking-wider text-xs sm:text-sm">
                     {(cardData && formatCardDate(cardData[0].$createdAt)) ||
                       "11/15"}
                   </p>
                 </div>
                 <div className="">
                   <h1 className="font-light text-xs ">Expiry</h1>
-                  <p className="font-medium tracking-wider text-sm">
+                  <p className="font-medium tracking-wider text-xs sm:text-sm">
                     {(cardData && formatCardDate(cardData[0].expiry_date)) ||
                       "03/25"}
                   </p>
@@ -80,7 +80,7 @@ export default function Card({
 
                 <div className="">
                   <h1 className="font-light text-xs">CVV</h1>
-                  <p className="font-bold tracking-more-wider text-sm">
+                  <p className="font-bold tracking-more-wider text-xs sm:text-sm">
                     {(cardData && cardData[0].cvv) || "555"}
                   </p>
                 </div>

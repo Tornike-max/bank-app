@@ -10,8 +10,8 @@ export default function MyPayments() {
   if (isPending) return <Loader />;
 
   return (
-    <div className=" max-w-[2200px] w-full mx-auto bg-white shadow-md rounded-md p-6">
-      <h1 className="text-center text-2xl text-blue-600 font-semibold mb-4">
+    <div className=" max-w-[2200px] w-full mx-auto bg-white shadow-md rounded-md p-4 sm:p-6">
+      <h1 className="text-center text-xl sm:text-xl text-blue-600 font-semibold mb-4">
         My Payments
       </h1>
       <ul className="w-full flex flex-col gap-4">
@@ -22,7 +22,7 @@ export default function MyPayments() {
           ))
         ) : (
           <div className="w-full flex justify-center items-center">
-            <span className="text-red-500 font-semibold text-lg ">
+            <span className="text-red-500 font-semibold text-base sm:text-lg ">
               NO DATA!
             </span>
           </div>

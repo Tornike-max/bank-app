@@ -1,12 +1,28 @@
 import { Cell, Legend, Pie, PieChart, Tooltip } from "recharts";
 import { generateColors } from "../../ui/generateColors";
 import { Models } from "appwrite";
+import { useEffect, useState } from "react";
 
 export default function Statistics({
   transactions,
 }: {
   transactions: Models.Document[] | undefined;
 }) {
+  const [showLegend, setShowLegend] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setShowLegend(window.innerWidth > 500);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const generatedColors = generateColors(
     transactions?.length !== 0 ? transactions?.length || 5 : 1
   );
@@ -46,7 +62,13 @@ export default function Statistics({
               </Pie>
 
               <Tooltip />
-              <Legend layout="vertical" align="right" verticalAlign="middle" />
+              {showLegend && (
+                <Legend
+                  layout="vertical"
+                  align="right"
+                  verticalAlign="middle"
+                />
+              )}
             </PieChart>
           </div>
         </div>

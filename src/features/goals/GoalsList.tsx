@@ -1,7 +1,7 @@
 import { Button, Input, Slider, Spinner, Textarea } from "@nextui-org/react";
 import { formatDate } from "../../ui/formatDate";
 import { formatCurrency } from "../../ui/formatCurrency";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useUpdateGoal } from "../../hooks/goalHooks/useUpdateGoal";
 import { Models } from "appwrite";
 import { useDeleteGoal } from "../../hooks/goalHooks/useDeleteGoal";
@@ -10,7 +10,6 @@ export default function GoalsList({ item }: { item: Models.Document }) {
   const [sliderAmount, setSliderAmount] = useState(0);
   const { update, isUpdating } = useUpdateGoal();
   const { mutate, isGoalDeleting } = useDeleteGoal();
-  useEffect(() => {}, [item]);
 
   function handleUpdate(
     e: React.MouseEvent,
@@ -31,15 +30,19 @@ export default function GoalsList({ item }: { item: Models.Document }) {
   }
 
   return (
-    <div className="w-full">
-      <div className="max-w-xl w-full p-8 m-auto flex justify-center items-center flex-col gap-4 shadow-lg border-1 border-stone-500 rounded-md">
+    <div className="max-w-[2200px] w-full">
+      <div className="w-full p-8 m-auto flex justify-center items-center flex-col gap-4 shadow-lg border-1 border-stone-500 rounded-md">
         <div className="w-full flex justify-center items-center">
-          <h1 className="text-2xl font-semibold text-primary-500">Your Goal</h1>
+          <h1 className="text-xl sm:text-2xl font-semibold text-primary-500">
+            Your Goal
+          </h1>
         </div>
 
-        <div className="w-full flex justify-between text-base text-primary-500 font-medium">
+        <div className="w-full flex items-center justify-between text-sm sm:text-base text-primary-500 font-medium">
           <span>{item.goalName}</span>
-          <span className="text-sm">{formatDate(item.deadline)}</span>
+          <span className="text-xs sm:text-sm">
+            {formatDate(item.deadline)}
+          </span>
         </div>
 
         <div className="w-full">
@@ -78,14 +81,14 @@ export default function GoalsList({ item }: { item: Models.Document }) {
             }}
           />
         </div>
-        <div className="w-full flex justify-between items-center text-sm">
-          <p>
+        <div className="w-full flex justify-between items-center text-xs sm:text-sm">
+          <p className="w-full flex items-start justify-center flex-col sm:flex-row sm:justify-start">
             <span>Remaining Amount: </span>
             <span className="font-semibold">
               {formatCurrency(item.remainingAmount, "")}
             </span>
           </p>
-          <p>
+          <p className="w-full flex items-end justify-center flex-col sm:flex-row sm:justify-end">
             <span>Your Goal: </span>
             <span className="font-semibold">
               {formatCurrency(item.goal, "")}

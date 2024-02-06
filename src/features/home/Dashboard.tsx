@@ -62,7 +62,7 @@ export default function Dashboard() {
           </Select>
         </FormControl>
       </div>
-      <div className="m-auto max-w-[2200px] w-full flex justify-center items-center gap-2">
+      <div className="m-auto max-w-[2200px] w-full grid grid-cols-2 sm:grid-cols-4 gap-2">
         <Totals
           income={income}
           withdrawals={withdrawals}

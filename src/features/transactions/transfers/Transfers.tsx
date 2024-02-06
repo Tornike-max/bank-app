@@ -15,18 +15,18 @@ export default function Transfers() {
     <div className="max-w-[2200px] w-full flex justify-center items-center flex-col">
       <div className="bg-primary-500 flex justify-center items-center flex-col py-4 px-6 w-full rounded-md text-stone-200 gap-6">
         <div className="w-full flex justify-between items-center">
-          <h3 className="text-lg font-semibold w-full text-start">
+          <h3 className="text-xs sm:text-sm md:text-base font-semibold w-full text-start">
             {user?.username}
           </h3>
-          <div className="flex items-center gap-2 text-stone-200">
-            <CiBank className="text-xl" />
+          <div className="flex items-center gap-2 text-stone-200 text-xs sm:text-sm md:text-base">
+            <CiBank />
             <span>
               {formatCurrency(currentAcc && currentAcc[0].balance, "USD")}
             </span>
           </div>
         </div>
 
-        <h1 className="w-full text-2xl text-stone-100 font-bold  flex justify-start items-center gap-2">
+        <h1 className="w-full text-sm sm:text-lg text-stone-100 font-bold  flex justify-start items-center gap-2">
           <SiMinutemailer />
           <span>Transfer To Other Account</span>
         </h1>

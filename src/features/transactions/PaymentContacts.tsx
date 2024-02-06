@@ -14,10 +14,10 @@ export default function PaymentContacts({
         <div className="flex justify-center items-center gap-2 cursor-pointer ">
           <img
             src={contact.imageUrl}
-            className="w-14 h-14 rounded-full object-cover shadow-lg"
+            className="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover shadow-lg"
             alt="Customer-image"
           />
-          <span className="text-lg font-semibold hover:underline">
+          <span className="text-xs sm:text-lg font-semibold hover:underline">
             {contact.name}
           </span>
         </div>
